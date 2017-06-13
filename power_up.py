@@ -12,11 +12,11 @@ class PowerUp(InventoryCommon):
         self.image_dir = constant.INVENTORY_IMAGE_DIR
         self.girls_dir = constant.POWER_UP_GIRLS_DIR
         self.already_power_up = False
-        self.enter_power_up_page = CommonFlow(self.power_up_dir, self.image_dir, 'enter_power_up_page.xlsx')
 
     def run(self, device):
         if not self.already_power_up:
-            self.enter_power_up_page.run(device)
+            enter_power_up_page = CommonFlow(self.power_up_dir, self.image_dir, 'enter_power_up_page.xlsx')
+            enter_power_up_page.run(device)
             self.power_up(device)
 
     def power_up(self, device):
@@ -48,8 +48,3 @@ class PowerUp(InventoryCommon):
 
 def image_path(filename):
     return os.path.join(constant.INVENTORY_IMAGE_DIR, filename)
-
-if __name__ == '__main__':
-    import atx
-    device = atx.connect('4200c49cf2faa381')
-    PowerUp().run(device)

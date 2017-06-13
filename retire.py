@@ -10,10 +10,10 @@ from image import Image
 class Retire(InventoryCommon):
     def __init__(self):
         self.retire_dir = constant.RETIRE_DIR
-        self.enter_retire_page = CommonFlow(self.retire_dir, constant.INVENTORY_IMAGE_DIR, 'enter_retire_page.xlsx')
 
     def run(self, device):
-        self.enter_retire_page.run(device)
+        enter_retire_page = CommonFlow(self.retire_dir, constant.INVENTORY_IMAGE_DIR, 'enter_retire_page.xlsx')
+        enter_retire_page.run(device)
         self.retire_girl(device)
 
     def check_status(self, device):

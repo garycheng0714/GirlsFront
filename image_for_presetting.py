@@ -1,4 +1,3 @@
-import time
 import constant
 from image import Image
 from point import Point
@@ -21,10 +20,10 @@ class ImageForPresetting(Image):
             somewhere.click(device)
             if self.support_again.exists(device):
                 self.ok_button.click(device)
-                time.sleep(3)
+                self.wait(3)
             elif self.back_button.exists(device):
                 self.back_button.click(device)
-                time.sleep(3)
+                self.wait(3)
             elif self.return_button.exists(device):
                 self.return_button.click(device)
-                time.sleep(3)
+                self.wait(3)
