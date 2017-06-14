@@ -16,8 +16,7 @@ class Battle:
         self.war_image_dir = os.path.join(self.war_dir, 'image')
         self.inventory = Inventory()
         self.restore = Restore()
-        if need_formation:
-            self.formation = Formation()
+        self.formation = Formation(need_formation)
 
     def run(self, device):
         rounds = 0
@@ -26,13 +25,15 @@ class Battle:
             presetting.click_somewhere_to_wait(device)
             try:
                 self.restore.check(device)
-                self.run_formation(device)
+                if self.formation.need_formation:
+                    self.run_formation(device)
                 self.enter_combat(device)
                 while self.inventory.hit_limit(device):
                     self.enter_combat(device)
                 self.apply_flow(device)
                 self.battle_flow(device)
-                self.formation.already_change = False
+                if self.formation.need_formation:
+                    self.formation.already_change = False
             except Exception as error:
                 print(error)
                 continue

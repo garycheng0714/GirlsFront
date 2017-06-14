@@ -15,6 +15,7 @@ CLICK_SOMEWHERE_TO_WAIT = 'click_to_wait_image'
 CLICK_OPTION_FIRST = 'option_click'
 WAIT_SECONDS = 'wait_seconds'
 WAIT_IMAGE_GONE = 'wait_image_gone'
+WAIT_IMAGE = 'wait_image'
 SWIPE = 'swipe'
 
 BATTLE_DIR = os.path.join(WORKING_DIR, 'battle')

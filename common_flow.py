@@ -54,6 +54,8 @@ class CommonFlow:
                     step.wait(step.option)
                 elif step.option_action == constant.WAIT_IMAGE_GONE:
                     step.wait_image_gone(device)
+                elif step.option_action == constant.WAIT_IMAGE:
+                    step.wait_image(device)
                 else:
                     step.click(device)
             else:

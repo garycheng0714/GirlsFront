@@ -7,7 +7,7 @@ from operation import use_image
 
 
 class Formation:
-    def __init__(self):
+    def __init__(self, need_formation):
         self.mapping_dir = constant.FORMATION_MAPPING_DIR
         self.main_girls = []
         self.candidates = []
@@ -17,6 +17,7 @@ class Formation:
         self.add_icon = use_image(constant.FORMATION_IMAGE_DIR, 'formation_add_icon')
         self.return_icon = use_image(constant.FORMATION_IMAGE_DIR, 'return_to_base')
         self.already_change = False
+        self.need_formation = need_formation
 
     def run(self, device):
         self.formation_icon.click(device)
