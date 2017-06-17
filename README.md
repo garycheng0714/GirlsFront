@@ -5,6 +5,8 @@ auto-play script for mobile game Girls' Frontline, is implemented by used Automa
 The introduce for Girls' Frontline
 https://acg.gamer.com.tw/acgDetail.php?s=84628
 
+示範影片
+https://youtu.be/iJaXqie2Quc
 
 概敘
 與一般遊戲一樣, Girls' Frontline(後文簡稱GF)中的角色要透過升等(練等)來提升能力, 而GF的練等方式非常有規律性, 選擇腳色、進入關卡、打怪。
