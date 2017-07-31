@@ -6,8 +6,8 @@ class Point(Action, object):
     """Handle the coordinate on device'"""
     def __init__(self, note, x, y, x1=None, y1=None):
         """  buffer offset for x is 50 pixes, y is 40 pixes in 960 x 540 resolution"""
-        self.coordinate = (x + randrange(-25, 25),
-                           y + randrange(-20, 20))
+        self.coordinate = (x + randrange(-5, 5),
+                           y + randrange(-5, 5))
         self.position_1 = (x, y)
         self.position_2 = (x1, y1)
         self.note = note

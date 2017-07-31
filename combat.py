@@ -9,14 +9,14 @@ from image_for_presetting import ImageForPresetting
 
 class Battle:
     """ handle how to execute battle flow"""
-    def __init__(self, name, need_formation):
+    def __init__(self, name, formation_type):
         self.name = name
         self.common_image_dir = constant.BATTLE_COMMON_IMAGE_DIR
         self.war_dir = os.path.join(constant.WARS_DIR, self.name)
         self.war_image_dir = os.path.join(self.war_dir, 'image')
         self.inventory = Inventory()
         self.restore = Restore()
-        self.formation = Formation(need_formation)
+        self.formation = Formation(formation_type)
 
     def run(self, device):
         rounds = 0
@@ -25,14 +25,14 @@ class Battle:
             presetting.click_somewhere_to_wait(device)
             try:
                 self.restore.check(device)
-                if self.formation.need_formation:
+                if self.formation.formation_type:
                     self.run_formation(device)
                 self.enter_combat(device)
                 while self.inventory.hit_limit(device):
                     self.enter_combat(device)
                 self.apply_flow(device)
                 self.battle_flow(device)
-                if self.formation.need_formation:
+                if self.formation.formation_type:
                     self.formation.already_change = False
             except Exception as error:
                 print(error)

@@ -37,3 +37,5 @@ GIRLS_IMAGE_DIR = os.path.join(POWER_UP_GIRLS_DIR, 'girls_inventory')
 FORMATION_DIR = os.path.join(WORKING_DIR, 'formation')
 FORMATION_IMAGE_DIR = os.path.join(FORMATION_DIR, 'image')
 FORMATION_MAPPING_DIR = os.path.join(FORMATION_DIR, 'mapping')
+FORMATION_AR_TYPE = 'AR'
+FORMATION_RF_TYPE = 'RF'
