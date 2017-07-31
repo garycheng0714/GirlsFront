@@ -30,7 +30,7 @@ class Image(Action, object):
         self.coordinate = (randrange(min_x, max_x), randrange(min_y, max_y))
 
     def wait_image_gone(self, device):
-        device.wait(self.name)
+        device.wait(self.name, timeout=15.0)
         device.wait_gone(self.name, timeout=120)
 
     def click(self, device):
